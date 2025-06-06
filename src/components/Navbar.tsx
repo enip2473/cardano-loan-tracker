@@ -80,6 +80,9 @@ export default function Navbar() {
         </Link>
         {user ? (
           <>
+            <Link href="/create-loan" style={navStyles.navLink}>
+              Create Loan
+            </Link>
             <span style={navStyles.userInfo}>Hi, {user.email}</span>
             <button onClick={handleLogout} style={navStyles.logoutButton}>
               Logout
