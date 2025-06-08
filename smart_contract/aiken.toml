@@ -1,0 +1,11 @@
+name = "example_owner/loan_contract"
+version = "0.0.1"
+license = "Apache-2.0"
+description = "A simple loan smart contract in Aiken"
+
+[[validators]]
+name = "loan" # This will be the prefix for the output files e.g. loan.spend.uplc
+path = "aiken/loan.ak" # Path to the Aiken source file for this validator
+maintainers = ["YourName <youremail@example.com>"]
+# For simplicity, not specifying dependencies or Plutus version unless build fails.
+# plutus_version = "v2" # This might be needed

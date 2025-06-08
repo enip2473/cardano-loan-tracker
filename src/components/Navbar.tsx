@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { useAuth } from '../context/AuthContext'; // Adjust path: if components is in root, use './context/AuthContext'
 import { useRouter } from 'next/navigation';
+import WalletConnect from './WalletConnect'; // Import WalletConnect component
 
 const navStyles = {
   navbar: {
@@ -98,6 +99,7 @@ export default function Navbar() {
             </Link>
           </>
         )}
+        <WalletConnect /> {/* Add WalletConnect component here */}
       </div>
     </nav>
   );
