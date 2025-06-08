@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css"; // Your global styles
 import { AuthProvider } from "../context/AuthContext"; // Adjust path
+import { WalletProvider } from "../context/WalletContext"; // Import WalletProvider
 import Navbar from "../components/Navbar"; // Adjust path if Navbar is elsewhere
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,12 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <Navbar /> {/* <-- Add Navbar here */}
-          <main style={{ padding: "1rem" }}> {/* Add some padding to main content */}
-            {children}
-          </main>
-        </AuthProvider>
+        <WalletProvider> {/* Wrap with WalletProvider */}
+          <AuthProvider>
+            <Navbar /> {/* <-- Add Navbar here */}
+            <main style={{ padding: "1rem" }}> {/* Add some padding to main content */}
+              {children}
+            </main>
+          </AuthProvider>
+        </WalletProvider>
       </body>
     </html>
   );

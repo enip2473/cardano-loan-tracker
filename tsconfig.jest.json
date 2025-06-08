@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs", // Jest typically uses CommonJS
+    "jsx": "react-jsx",  // or "react" if you prefer, but react-jsx is common for Jest with React 17+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    // "noEmit": true, // Already in base, but ensure it's what you want for tests too
+    "types": ["jest", "node"] // Include Jest and Node types for the test environment
+  },
+  "include": [
+    "**/*.test.ts", // Include all .test.ts files
+    "**/*.test.tsx", // Include all .test.tsx files
+    "jest.setup.js", // Include setup file if it needs TS processing (though it's .js)
+    "src/**/*.ts", // Include src files for type checking in tests
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
+}
